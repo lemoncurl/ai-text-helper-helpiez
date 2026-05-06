@@ -1,0 +1,5 @@
+# buat ignore sensitive informations
+
+node_modules
+
+.env

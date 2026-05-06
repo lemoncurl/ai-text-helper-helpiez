@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helpiez</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>𓂃🖋 Helpiez</h1>
+      <p>Paraphrase or improve your text with Helpiez</p>
+    </div>
+
+    <!-- API Key Setup -->
+    <!-- <div class="setup-card" id="setupCard">
+      <p class="setup-title">🔑 Masukkan OpenRouter API Key kamu</p>
+      <div class="setup-row">
+        <input type="password" id="apiKeyInput" placeholder="sk-or-v1-..." />
+        <button onclick="saveKey()">Simpan</button>
+      </div>
+      <p class="setup-hint">
+        Daftar gratis di
+        <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a>
+        → buat key → tempel di sini.
+        Key disimpan di browser, tidak dikirim ke server lain.
+      </p>
+    </div> -->
+
+    <!-- Input -->
+    <div class="card">
+      <p class="label">Your text</p>
+      <textarea
+        id="inputText"
+        placeholder="Your text here..."
+        oninput="updateCharCount()"
+      ></textarea>
+      <p class="char-count"><span id="charCount">0</span> / 3000 karakter</p>
+    </div>
+
+    <!-- Mode Selector -->
+    <p class="label">Choose mode</p>
+    <div class="mode-row">
+      <button class="mode-btn active" id="btn-paraphrase" onclick="setMode('paraphrase')">
+        🗘 Paraphrase
+      </button>
+      <button class="mode-btn" id="btn-improve" onclick="setMode('improve')">
+        ↗ Improve / Polish
+      </button>
+    </div>
+
+    <!-- Run Button -->
+    <button class="run-btn" id="runBtn" onclick="processText()">
+      ⋙ Process with AI
+    </button>
+
+    <!-- Error Message -->
+    <p class="error-msg" id="errorMsg"></p>
+
+    <!-- Output -->
+    <div class="card" id="outputCard">
+      <p class="label">Output</p>
+      <div class="output-area" id="output">
+        <span class="placeholder">Output will be here...</span>
+      </div>
+      <div class="output-actions" id="outputActions">
+        <button class="action-btn" id="copyBtn" onclick="copyOutput()">
+          🗎 Copy output
+        </button>
+        <button class="action-btn" onclick="useAsInput()">
+          → Use as input
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer">
+      © 2026 -N | Helpiez with OpenRouter API &mdash;
+      <a href="https://openrouter.ai" target="_blank">openrouter.ai</a>
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
