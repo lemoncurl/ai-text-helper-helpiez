@@ -1,4 +1,6 @@
-alert("JS CONNECTED");
+// alert("JS CONNECTED");
+
+const BACKEND_URL = "http://127.0.0.1:3000";
 
 let currentMode = "paraphrase";
 
@@ -58,7 +60,7 @@ async function processText() {
   try {
     console.log("SENDING REQUEST...");
 
-    const response = await fetch("http://127.0.0.1:3000/rewrite", {
+    const response = await fetch(BACKEND_URL + "/rewrite", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

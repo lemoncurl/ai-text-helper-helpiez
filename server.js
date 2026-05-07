@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Debug API Key
 console.log("API KEY:", process.env.API_KEY ? "Loaded ✅" : "NOT FOUND ❌");
@@ -31,7 +31,9 @@ app.post("/rewrite", async (req, res) => {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.API_KEY}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://lemoncurl.github.io/ai-text-helper-helpiez",
+        "X-Title": "Helpiez"
       },
       body: JSON.stringify({
         model: "meta-llama/llama-3-8b-instruct:free",
@@ -75,6 +77,10 @@ app.post("/rewrite", async (req, res) => {
     console.error("SERVER ERROR:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+app.get("/", (req, res) => {
+  res.json({ status: "Helpiez backend is running ✅" });
 });
 
 app.listen(PORT, () => {
