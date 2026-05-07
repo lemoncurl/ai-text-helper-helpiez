@@ -1,6 +1,6 @@
 // alert("JS CONNECTED");
 
-const BACKEND_URL = "http://127.0.0.1:3000";
+const BACKEND_URL = "ai-text-helper-helpiez-production.up.railway.app";
 
 let currentMode = "paraphrase";
 
