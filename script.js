@@ -60,7 +60,7 @@ async function processText() {
   try {
     console.log("SENDING REQUEST...");
 
-    const response = await fetch(BACKEND_URL + "/rewrite", {
+    const response = await fetch("https://ai-text-helper-helpiez-production.up.railway.app/rewrite", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
