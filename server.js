@@ -13,7 +13,7 @@ app.use(cors({
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-const HOST = "0.0.0.0";
+// const HOST = "0.0.0.0";
 
 // Debug API Key
 console.log("API KEY:", process.env.API_KEY ? "Loaded ✅" : "NOT FOUND ❌");
@@ -88,6 +88,6 @@ app.get("/", (req, res) => {
   res.json({ status: "Helpiez backend is running ✅" });
 });
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
