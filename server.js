@@ -28,8 +28,8 @@ app.post("/rewrite", async (req, res) => {
 
   const prompt =
     mode === "paraphrase"
-      ? `Paraphrase the following text clearly and naturally:\n\n${text}`
-      : `Rewrite the following text to be more professional and clear:\n\n${text}`;
+      ? `Paraphrase the following text using different words while keeping the exact same meaning. Fix any grammar issues. Reply with only the paraphrased text, no explanation, no introduction:\n\n${text}`
+      : `Improve and polish the following text to make it more professional, clear, and well-structured. Fix grammar, punctuation, and word choice. Reply with only the improved text, no explanation, no introduction:\n\n${text}`;
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
