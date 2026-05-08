@@ -41,7 +41,7 @@ app.post("/rewrite", async (req, res) => {
         "X-Title": "Helpiez"
       },
       body: JSON.stringify({
-        model: "meta-llama/llama-3-8b-instruct:free",
+        model: "openrouter/free",
         messages: [
           {
             role: "user",
